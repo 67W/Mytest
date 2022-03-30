@@ -1,5 +1,7 @@
 package module7.practice
 
+import kotlin.random.Random
+
 class TVClass(val brand: String, val model: String, val diagonalSize: String) {
 
     var turnOnTV = false
@@ -24,6 +26,7 @@ class TVClass(val brand: String, val model: String, val diagonalSize: String) {
             else -> "no channelInput"
         }
     }
+
 
     companion object {
         const val maxVolume = 100
