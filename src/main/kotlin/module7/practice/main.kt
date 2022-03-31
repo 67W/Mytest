@@ -6,9 +6,7 @@ fun main() {
     lg.turnOnTV()
     lg.turnOffTV()
     lg.turnOnTV()
-    println("Input channelInput:")
-    val channel = readLine()!!.toInt()
-    println(lg.channelInput(channel))
+
 
 
     println("Max volume: ${TVClass.maxVolume}")
@@ -21,4 +19,9 @@ fun main() {
 
     println(Channels.nameList)
     println(Channels.getRandomChannels())
+
+    println("Input channelInput:")
+    val channel = readLine()!!.toInt()
+    println(lg.channelInput(channel))
+
 }

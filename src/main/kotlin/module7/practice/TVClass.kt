@@ -1,7 +1,5 @@
 package module7.practice
 
-import kotlin.random.Random
-
 class TVClass(val brand: String, val model: String, val diagonalSize: String) {
 
     var turnOnTV = false
@@ -21,8 +19,7 @@ class TVClass(val brand: String, val model: String, val diagonalSize: String) {
     private fun channelList(input: Int): String {
 
         return when (input) {
-            1 -> "First"
-            2 -> "Second"
+            input -> "${Channels.mutMap.get(key = input)}"
             else -> "no channelInput"
         }
     }
