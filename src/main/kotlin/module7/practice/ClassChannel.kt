@@ -20,4 +20,5 @@ class ClassChannel {
         "Eurosport 1",
         "National Geographic"
     )
+
 }

@@ -14,7 +14,7 @@ object Channels {
     var mutMap = mutableMapOf<Int, String>()
     private set
 
-    val nameList = mutableListOf("a", "b", "c", "d", "e", "f", "g", "h", "i", "J", "k", "l", "m")
+    val nameList = ClassChannel().nameList
     fun getRandomChannels(): MutableMap<Int, String> {
 
         for (i in list.indices) {
