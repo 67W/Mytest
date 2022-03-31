@@ -7,8 +7,6 @@ fun main() {
     lg.turnOffTV()
     lg.turnOnTV()
 
-
-
     println("Max volume: ${TVClass.maxVolume}")
     println("Set volume:")
     val setVolume = TVClass.volume(readLine()!!.toInt())
@@ -23,5 +21,4 @@ fun main() {
     println("Input channelInput:")
     val channel = readLine()!!.toInt()
     println(lg.channelInput(channel))
-
 }
