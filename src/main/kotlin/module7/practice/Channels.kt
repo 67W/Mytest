@@ -11,15 +11,12 @@ object Channels {
         }
         return list
     }
-    var mutMap = mutableMapOf<Int, String>()
-    private set
 
-    val nameList = ClassChannel().nameList
-    fun getRandomChannels(): MutableMap<Int, String> {
-
+    fun getRandomChannels(nameList: List<String>): MutableList<String> {
+        val mutList = mutableListOf<String>()
         for (i in list.indices) {
-            mutMap += Pair(list[i], nameList.shuffled()[i])
+            mutList += nameList.shuffled()[i]
         }
-        return mutMap
+        return mutList
     }
 }
