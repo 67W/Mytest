@@ -3,7 +3,7 @@ package module7.practice
 import kotlin.random.Random
 
 object Channels {
-    val countChannel = Random.nextInt(1, 10)
+
     private val list = mutableListOf<Int>()
     fun listChannels(input: Int): MutableList<Int> {
         for (i in 1..input) {
@@ -13,9 +13,11 @@ object Channels {
     }
 
     fun getRandomChannels(nameList: MutableList<String>): MutableList<String> {
+        val countChannel = Random.nextInt(1, 10)
         val mutList = mutableListOf<String>()
-        for (i in list.indices) {
-            mutList += nameList.shuffled()[i]
+        nameList.shuffled()
+        for (i in 1..countChannel) {
+            mutList += nameList[i]
         }
         return mutList
     }

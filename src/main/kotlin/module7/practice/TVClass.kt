@@ -1,6 +1,6 @@
 package module7.practice
 
-class TVClass(val brand: String, val model: String, val diagonalSize: String) {
+data class TVClass(val brand: String, val model: String, val diagonalSize: String) {
 
     private val nameList = mutableListOf(
         "BBC One",
@@ -26,9 +26,10 @@ class TVClass(val brand: String, val model: String, val diagonalSize: String) {
 
     init {
         currentList = Channels.getRandomChannels(nameList)
+        println(currentList)
     }
 
-    private val currentChannel = 0
+    private var currentChannelIndex = "0"
 
     var turnOnTV = false
         private set
@@ -46,6 +47,9 @@ class TVClass(val brand: String, val model: String, val diagonalSize: String) {
     var volume = 50
 
     fun volumeUp(inputVolume: Int): Int {
+        if (!turnOnTV) {
+            return -1
+        }
         return when {
             inputVolume < 0 -> volume
             volume + inputVolume > maxVolume -> {
@@ -60,6 +64,9 @@ class TVClass(val brand: String, val model: String, val diagonalSize: String) {
     }
 
     fun volumeDown(inputVolume: Int): Int {
+        if (!turnOnTV) {
+            return -1
+        }
         return when {
             inputVolume > 0 -> volume
             volume + inputVolume < 0 -> {
@@ -77,7 +84,38 @@ class TVClass(val brand: String, val model: String, val diagonalSize: String) {
         if (turnOnTV == false) {
             turnOnTV()
         }
-        return currentList.getOrNull(input - 1) ?: "wrong channel"
+        currentChannelIndex = (input - 1).toString()
+        return currentList.getOrNull(input - 1) ?: "0"
+    }
+
+    fun xChangeChannel(input: String): String {
+        if (turnOnTV == false) {
+            turnOnTV()
+        }
+
+        when (input) {
+            "+" -> {
+                if (currentChannelIndex.toInt() + 1 >= currentList.size) {
+                    currentChannelIndex = "0"
+                } else {
+                    currentChannelIndex = (currentChannelIndex.toInt() + 1).toString()
+                }
+            }
+            "-" -> {
+                if (currentChannelIndex.toInt() - 1 < 0) {
+                    currentChannelIndex = currentList.lastIndex.toString()
+                } else {
+                    currentChannelIndex = (currentChannelIndex.toInt() - 1).toString()
+                }
+            }
+        }
+
+        return currentList.getOrNull(currentChannelIndex.toInt()) ?: "wrong channel"
+    }
+
+    fun printAllChannels() {
+        for (i in 0 until currentList.size)
+            println("${i + 1} - ${currentList[i]}")
     }
 
 // возможно не понадобится
