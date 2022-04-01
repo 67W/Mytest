@@ -21,12 +21,8 @@ fun main() {
 
     println("Проверка значения громкости ${lg.volume}")
 
-    val listChan = Channels.listChannels(Channels.countChannel)
-    println(listChan)
-
     println("Input channelInput:")
     val channel = readLine()!!.toInt()
-
     println("Вывод из changeChannel")
     println(lg.changeChannel(channel))
 }

@@ -22,7 +22,7 @@ class TVClass(val brand: String, val model: String, val diagonalSize: String) {
         "National Geographic"
     )
 
-    private var currentList = listOf<String>()
+    private var currentList = mutableListOf<String>()
 
     init {
         currentList = Channels.getRandomChannels(nameList)

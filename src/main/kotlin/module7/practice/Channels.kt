@@ -12,7 +12,7 @@ object Channels {
         return list
     }
 
-    fun getRandomChannels(nameList: List<String>): MutableList<String> {
+    fun getRandomChannels(nameList: MutableList<String>): MutableList<String> {
         val mutList = mutableListOf<String>()
         for (i in list.indices) {
             mutList += nameList.shuffled()[i]
