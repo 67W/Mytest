@@ -25,10 +25,11 @@ data class TVClass(val brand: String, val model: String, val diagonalSize: Strin
     private var currentList = mutableListOf<String>()
 
     init {
-        currentList = Channels.getRandomChannels(nameList)
-        println(currentList)
+        currentList = Channels.getRandomChannels(nameList).shuffled().toMutableList()
+
     }
 
+    //    private var currentList = Channels.getRandomChannels(nameList).shuffled()
     private var currentChannelIndex = "0"
 
     var turnOnTV = false
@@ -117,15 +118,6 @@ data class TVClass(val brand: String, val model: String, val diagonalSize: Strin
         for (i in 0 until currentList.size)
             println("${i + 1} - ${currentList[i]}")
     }
-
-// возможно не понадобится
-//    fun channelInput(input: Int): String {
-//        return when (input) {
-//            input -> "${Channels.mutMap.get(key = input)}"
-//            else -> "no channelInput"
-//        }
-//    }
-
 
     companion object {
         const val maxVolume = 100
