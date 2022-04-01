@@ -5,34 +5,28 @@ fun main() {
 
     lg.turnOnTV()
     lg.turnOffTV()
-    lg.turnOnTV()
 
     println("Max volume: ${TVClass.maxVolume}")
-    println("Set volume:")
+    println("Now volume is: ${lg.volume}")
 
-    val lgSetVolumeUp = lg.volumeUp(readLine()!!.toInt())
-    println("Now is $lgSetVolumeUp")
+    println("Up volume by:")
+    lg.volumeUp(readLine()!!.toInt())
+    println("Now volume is: ${lg.volume}")
 
-    println("Set volume:")
-    val lgSetVolumeDown = lg.volumeDown(readLine()!!.toInt())
-    println("Now is $lgSetVolumeDown")
+    println("Проверка значения громкости ${lg.volume}")
+
+    println("Down volume by:")
+    lg.volumeDown(readLine()!!.toInt())
+    println("Now volume is: ${lg.volume}")
+
+    println("Проверка значения громкости ${lg.volume}")
 
     val listChan = Channels.listChannels(Channels.countChannel)
     println(listChan)
 
-//    println(Channels.nameList)
-    println(Channels.getRandomChannels())
-
     println("Input channelInput:")
     val channel = readLine()!!.toInt()
-    println(lg.channelInput(channel))
+
+    println("Вывод из changeChannel")
+    println(lg.changeChannel(channel))
 }
-//        0 Меню
-//        1 вкл выкл
-//        0
-//        2 громкость
-//        0
-//        3 каналы
-//        0
-//        4
-//        5

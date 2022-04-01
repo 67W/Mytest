@@ -23,9 +23,11 @@ class TVClass(val brand: String, val model: String, val diagonalSize: String) {
     )
 
     private var currentList = listOf<String>()
+
     init {
         currentList = Channels.getRandomChannels(nameList)
     }
+
     private val currentChannel = 0
 
     var turnOnTV = false
@@ -41,26 +43,32 @@ class TVClass(val brand: String, val model: String, val diagonalSize: String) {
         turnOnTV = false
     }
 
-    var volume = 0
+    var volume = 50
 
-    fun volumeUp(inputVolume: Int): String {
+    fun volumeUp(inputVolume: Int): Int {
         return when {
-            inputVolume < 0 -> "Min volume 0"
-            inputVolume > maxVolume -> "Max volume: $maxVolume"
+            inputVolume < 0 -> volume
+            volume + inputVolume > maxVolume -> {
+                volume = maxVolume
+                volume
+            }
             else -> {
                 volume += inputVolume
-                volume.toString()
+                volume
             }
         }
     }
 
-    fun volumeDown(inputVolume: Int): String {
+    fun volumeDown(inputVolume: Int): Int {
         return when {
-            inputVolume < 0 -> "Min volume 0"
-            inputVolume > maxVolume -> "Max volume: $maxVolume"
+            inputVolume > 0 -> volume
+            volume + inputVolume < 0 -> {
+                volume = 0
+                volume
+            }
             else -> {
-                volume -= inputVolume
-                volume.toString()
+                volume += inputVolume
+                volume
             }
         }
     }
@@ -69,15 +77,16 @@ class TVClass(val brand: String, val model: String, val diagonalSize: String) {
         if (turnOnTV == false) {
             turnOnTV()
         }
-        return nameList.getOrNull(input - 1) ?: "wrong channel"
+        return currentList.getOrNull(input - 1) ?: "wrong channel"
     }
 
-    fun channelInput(input: Int): String {
-        return when (input) {
-            input -> "${Channels.mutMap.get(key = input)}"
-            else -> "no channelInput"
-        }
-    }
+// возможно не понадобится
+//    fun channelInput(input: Int): String {
+//        return when (input) {
+//            input -> "${Channels.mutMap.get(key = input)}"
+//            else -> "no channelInput"
+//        }
+//    }
 
 
     companion object {
