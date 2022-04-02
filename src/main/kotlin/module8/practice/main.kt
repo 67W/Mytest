@@ -1,5 +1,5 @@
 package module8.practice
 
-fun main(){
+fun main() {
     println("hi")
 }
