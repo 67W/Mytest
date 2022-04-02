@@ -1,17 +1,21 @@
 package module8.lesson3
 
+import kotlin.random.Random
+
 open class Developer(
     name: String,
     age: Int,
-    val experience: Int = 5
+    protected val experience: Int = 5
 ) : Person(name, age) {
     open val paradigm = "OOP"
     open fun writeCode() = println("programmer writing code")
-    fun getLevel() = when (experience) {
+    open fun getLevel() = when (experience) {
         0 -> "intern"
         in 1..2 -> "junior"
         in 3..4 -> "middle"
         in 4..5 -> "senior"
         else -> "leading"
     }
+
+    protected open fun getCoffeeBreak() = Random.nextBoolean()
 }

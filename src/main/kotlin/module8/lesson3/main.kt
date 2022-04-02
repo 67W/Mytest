@@ -9,19 +9,16 @@ fun main() {
 
     ktDev.writeCode()
     println("ktDev level - ${ktDev.getLevel()}")
-    println("experience - ${ktDev.experience}")
 
     javaDev.writeCode()
     println("javaDev level - ${javaDev.getLevel()}")
-    println("experience - ${javaDev.experience}")
 
     cppDev.writeCode()
     println("cppDev level - ${cppDev.getLevel()}")
-    println("experience - ${cppDev.experience}")
 
     developer.writeCode()
     println("developer level - ${developer.getLevel()}")
-    println("experience - ${developer.experience}")
+
     println("javaDev paradigm - ${javaDev.paradigm}")
     println("scalaDev paradigm - ${scalaDev.paradigm}")
 }
