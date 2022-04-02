@@ -1,9 +1,11 @@
 package module8.practice
 
+import kotlin.random.Random
+
 open class Animal(
-    val energy: Int,
-    val weight: Int,
-    val currentAge: Int,
+    var energy: Int,
+    var weight: Int,
+    var currentAge: Int,
     val maxAge: Int,
     val name: String
 ) {
@@ -12,7 +14,26 @@ open class Animal(
         else -> false
     }
 
-    open fun sleep() = println("sleeping")
-    open fun eat() = println("eating")
-    open fun move() = println("moving")
+    open fun sleep() {
+        energy += 5
+        println("$name спит")
+    }
+
+    open fun eat() {
+        energy += 3
+        weight += 1
+        if (Random.nextBoolean()) {
+            currentAge += 1
+        }
+        println("$name ест")
+    }
+
+    open fun move() {
+        energy -= 5
+        weight -= 1
+        if (Random.nextBoolean()) {
+            currentAge += 1
+        }
+        println("$name двигается")
+    }
 }
