@@ -5,8 +5,8 @@ open class Developer(
     age: Int,
     val experience: Int = 5
 ) : Person(name, age) {
+    val paradigm = "OOP"
     open fun writeCode() = println("programmer writing code")
-
     fun getLevel() = when (experience) {
         0 -> "intern"
         in 1..2 -> "junior"
