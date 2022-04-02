@@ -5,7 +5,7 @@ open class Developer(
     age: Int,
     val experience: Int = 5
 ) : Person(name, age) {
-    fun writeCode() = println("programmer writing code")
+    open fun writeCode() = println("programmer writing code")
 
     fun getLevel() = when (experience) {
         0 -> "intern"

@@ -6,11 +6,14 @@ fun main() {
     val cppDev = CppDeveloper(name = "Anna", age = 30, experience = 7)
 
     ktDev.writeCode()
+    println("ktDev level - ${ktDev.getLevel()}")
     println("experience - ${ktDev.experience}")
 
     javaDev.writeCode()
+    println("javaDev level - ${javaDev.getLevel()}")
     println("experience - ${javaDev.experience}")
 
     cppDev.writeCode()
+    println("cppDev level - ${cppDev.getLevel()}")
     println("experience - ${cppDev.experience}")
 }
