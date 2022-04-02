@@ -1,20 +1,16 @@
 package module8.lesson3
 
 fun main() {
-    val person = Person("Alex", 25)
-    val driver = Driver("Ivan", 46, 2)
+    val ktDev = KotlinDeveloper("Alex", 25)
+    val javaDev = JavaDeveloper(name = "Ivan", age = 40, experience = 20)
+    val cppDev = CppDeveloper(name = "Anna", age = 30, experience = 7)
 
-    person.age
-    person.name
-    person.sleep()
-    person.eat()
-    person.walk()
+    ktDev.writeCode()
+    println("experience - ${ktDev.experience}")
 
-    driver.age
-    driver.name
-    driver.sleep()
-    driver.eat()
-    driver.walk()
-    driver.experience
-    driver.drive()
+    javaDev.writeCode()
+    println("experience - ${javaDev.experience}")
+
+    cppDev.writeCode()
+    println("experience - ${cppDev.experience}")
 }
