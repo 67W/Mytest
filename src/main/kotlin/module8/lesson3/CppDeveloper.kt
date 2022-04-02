@@ -5,6 +5,7 @@ class CppDeveloper : Developer {
     constructor(name: String, age: Int, experience: Int) : super(name, age, experience)
 
     override fun writeCode(){
-        println("cpp developer writing cpp code")
+        super.writeCode()
+        println("c++ code")
     }
 }
