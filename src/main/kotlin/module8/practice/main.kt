@@ -11,4 +11,15 @@ fun main() {
     println(bird.currentAge)
     bird.move()
     println(bird.currentAge)
+
+// пригодится
+//    when((1..5).random()){
+//        1->animalList[i].sleep()
+//        2->animalList[i].eat()
+//        3->animalList[i].move()
+//        4->{
+//            animalBorn++
+//            animalList.add(animalList[i].procreate())
+//        }
+//    }
 }
