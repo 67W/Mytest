@@ -1,12 +1,14 @@
 package module8.practice
 
-class Bird : Animal {
-    constructor(energy: Int, weight: Int, currentAge: Int, maxAge: Int, name: String) : super(
-        energy,
-        weight,
-        currentAge,
-        maxAge,
-        name
-    )
-
+class Bird(energy: Int, weight: Int, currentAge: Int, maxAge: Int, name: String) : Animal(
+    energy,
+    weight,
+    currentAge,
+    maxAge,
+    name
+) {
+    override fun move() {
+        super.move()
+        println("Летит")
+    }
 }

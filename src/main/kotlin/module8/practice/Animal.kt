@@ -22,18 +22,32 @@ open class Animal(
     open fun eat() {
         energy += 3
         weight += 1
-        if (Random.nextBoolean()) {
-            currentAge += 1
-        }
+        tryIncrementAge()
         println("$name ест")
     }
 
     open fun move() {
         energy -= 5
         weight -= 1
+        tryIncrementAge()
+        println("$name двигается")
+    }
+
+    fun tryIncrementAge() {
+        if (energy <= 0 || weight <= 0 || isTooOld()) return
+
         if (Random.nextBoolean()) {
             currentAge += 1
         }
-        println("$name двигается")
+    }
+
+    fun bornAnimal(): Animal {
+        return Animal(
+            energy = Random.nextInt(1, 10),
+            weight = Random.nextInt(1, 5),
+            name = name,
+            maxAge = maxAge,
+            currentAge = 0
+        )
     }
 }
