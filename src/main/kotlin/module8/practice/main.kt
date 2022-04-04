@@ -3,6 +3,7 @@ package module8.practice
 fun main() {
     println("hi")
     val bird = Bird(10, 1, 0, 15, "BIRD")
+    val fish = Fish(15, 3, 0, 5, "FISH")
     bird.sleep()
     println(bird.energy)
     bird.eat()
@@ -11,16 +12,29 @@ fun main() {
     println(bird.currentAge)
     bird.move()
     println(bird.currentAge)
-//listOf<>()
-//    list.add()
-    val newAnimal = bird.bornAnimal()
-    println(
-        "Born new animal: Name: ${newAnimal.name}, " +
-                "Age: ${newAnimal.currentAge}, " +
-                "Weight: ${newAnimal.weight}, " +
-                "Energy: ${newAnimal.energy}, " +
-                "Max age: ${newAnimal.maxAge}"
-    )
+
+
+//    val newBird = bird.bornAnimal()
+//    println(
+//        "Born new animal: Name: ${newBird.name}, " +
+//                "Age: ${newBird.currentAge}, " +
+//                "Weight: ${newBird.weight}, " +
+//                "Energy: ${newBird.energy}, " +
+//                "Max age: ${newBird.maxAge}"
+//    )
+//
+//    val newFish = fish.bornAnimal()
+//    println(
+//        "Born new animal: Name: ${newFish.name}, " +
+//                "Age: ${newFish.currentAge}, " +
+//                "Weight: ${newFish.weight}, " +
+//                "Energy: ${newFish.energy}, " +
+//                "Max age: ${newFish.maxAge}"
+//    )
+    fish.bornAnimal()
+}
+
+
 
 // пригодится
 //    when((1..5).random()){
@@ -32,4 +46,3 @@ fun main() {
 //            animalList.add(animalList[i].procreate())
 //        }
 //    }
-}
