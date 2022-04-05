@@ -14,10 +14,21 @@ fun main() {
     //    println(bird.currentAge)
 
     //    fish.bornAnimal()
+    val fish = Fish(20, 20, 1, name = "FISH")
+    val dog = Dog(10, 30, 1, name = "DOG")
+    val bird = Bird(30, 10, 1, name = "BIRD")
 
+
+    fish.move()
+    fish.bornAnimal()
+
+    dog.move()
+    dog.bornAnimal()
+
+    bird.move()
+    bird.bornAnimal()
 
 }
-
 
 
 // пригодится

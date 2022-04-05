@@ -48,7 +48,7 @@ open class Animal(
 //        )
 //    }
 
-    open fun bornAnimal(): Animal {
+    protected open fun bornAnimal(): Animal {
         val bornNewAnimal = Animal(
             energy = Random.nextInt(1, 10), weight = Random.nextInt(1, 5), name = name, maxAge = maxAge, currentAge = 0
         )

@@ -1,6 +1,12 @@
 package module8.practice
 
-class Fish(energy: Int, weight: Int, currentAge: Int, maxAge: Int, name: String) : Animal(
+open class Fish(
+    energy: Int,
+    weight: Int,
+    currentAge: Int,
+    maxAge: Int = 3,
+    name: String
+) : Animal(
     energy,
     weight,
     currentAge,
@@ -12,9 +18,7 @@ class Fish(energy: Int, weight: Int, currentAge: Int, maxAge: Int, name: String)
         println("Плывет")
     }
 
-    override fun bornAnimal() {
-        super.bornAnimal()
-        return bornAnimal()
+    public override fun bornAnimal(): Animal {
+        return super.bornAnimal()
     }
-
 }

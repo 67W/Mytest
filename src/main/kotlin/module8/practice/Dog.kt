@@ -1,6 +1,12 @@
 package module8.practice
 
-class Dog(energy: Int, weight: Int, currentAge: Int, maxAge: Int, name: String) : Animal(
+class Dog(
+    energy: Int,
+    weight: Int,
+    currentAge: Int,
+    maxAge: Int = 10,
+    name: String
+) : Animal(
     energy,
     weight,
     currentAge,
@@ -10,5 +16,9 @@ class Dog(energy: Int, weight: Int, currentAge: Int, maxAge: Int, name: String) 
     override fun move() {
         super.move()
         println("Бежит")
+    }
+
+    public override fun bornAnimal(): Animal {
+        return super.bornAnimal()
     }
 }
