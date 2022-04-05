@@ -23,19 +23,27 @@ open class Animal(
     }
 
     open fun move() {
+        if (isNotOkStatus()) return
         energy -= 5
         weight -= 1
-        tryIncrementAge()
+        addAge()
         println("$name двигается")
     }
 
     open fun tryIncrementAge() {
-        if (energy <= 0 || weight <= 0 || isTooOld()) return
+        if (isNotOkStatus()) return
+        addAge()
+    }
 
+    private fun addAge() {
         if (Random.nextBoolean()) {
             currentAge += 1
         }
     }
+
+    protected fun isNotOkStatus() = energy <= 0 || weight <= 0 || isTooOld()
+
+
 // не отрабатывает на принт показателей рожденного животного. принтит покахатели родителя bird or fish, or any
 //    fun bornAnimal(): Animal {
 //        println("Name $name, energy: $energy")

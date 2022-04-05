@@ -4,7 +4,7 @@ open class Fish(
     energy: Int,
     weight: Int,
     currentAge: Int,
-    maxAge: Int = 3,
+    maxAge: Int = 2,
     name: String
 ) : Animal(
     energy,
@@ -14,11 +14,19 @@ open class Fish(
     name
 ) {
     override fun move() {
+        if (isNotOkStatus()) return
         super.move()
         println("Плывет")
     }
 
-    public override fun bornAnimal(): Animal {
-        return super.bornAnimal()
+    public override fun bornAnimal(): Fish {
+        val animal = super.bornAnimal()
+        return Fish(
+            energy = animal.energy,
+            weight = animal.weight,
+            currentAge = animal.currentAge,
+            name = animal.name,
+            maxAge = animal.maxAge
+        )
     }
 }

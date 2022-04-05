@@ -18,7 +18,14 @@ class Bird(
         println("Летит")
     }
 
-    public override fun bornAnimal(): Animal {
-        return super.bornAnimal()
+    public override fun bornAnimal(): Bird {
+        val animal = super.bornAnimal()
+        return Bird(
+            energy = animal.energy,
+            weight = animal.weight,
+            currentAge = animal.currentAge,
+            name = animal.name,
+            maxAge = animal.maxAge
+        )
     }
 }

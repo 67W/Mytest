@@ -18,7 +18,14 @@ class Dog(
         println("Бежит")
     }
 
-    public override fun bornAnimal(): Animal {
-        return super.bornAnimal()
+    public override fun bornAnimal(): Dog {
+        val animal = super.bornAnimal()
+        return Dog(
+            energy = animal.energy,
+            weight = animal.weight,
+            currentAge = animal.currentAge,
+            name = animal.name,
+            maxAge = animal.maxAge
+        )
     }
 }
