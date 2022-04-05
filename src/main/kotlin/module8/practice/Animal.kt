@@ -29,7 +29,7 @@ open class Animal(
         println("$name двигается")
     }
 
-    fun tryIncrementAge() {
+    open fun tryIncrementAge() {
         if (energy <= 0 || weight <= 0 || isTooOld()) return
 
         if (Random.nextBoolean()) {

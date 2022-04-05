@@ -20,6 +20,15 @@ fun main() {
 
 
     fish.move()
+    println(fish.energy)
+    fish.move()
+    println(fish.energy)
+    fish.move()
+    println(fish.energy)
+    fish.move()
+    println(fish.energy)
+    fish.move()
+    println(fish.energy)
     fish.bornAnimal()
 
     dog.move()
