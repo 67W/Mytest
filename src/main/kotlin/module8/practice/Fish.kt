@@ -11,4 +11,10 @@ class Fish(energy: Int, weight: Int, currentAge: Int, maxAge: Int, name: String)
         super.move()
         println("Плывет")
     }
+
+    override fun bornAnimal() {
+        super.bornAnimal()
+        return bornAnimal()
+    }
+
 }
