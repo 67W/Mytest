@@ -1,5 +1,7 @@
 package module8.practice
 
+import kotlin.random.Random
+
 fun main() {
     println("hi")
     //    val bird = Bird(10, 1, 0, 15, "BIRD")
@@ -37,6 +39,20 @@ fun main() {
     bird.move()
     bird.bornAnimal()
 
+    val animalList = NatureReserve().animalList
+    for (i in animalList.indices) {
+        when (Random.nextInt(1, 2)) {
+
+            1 -> {
+
+                animalList.add(animalList[i].bornAnimal())
+            }
+        }
+        println(animalList)
+
+
+    }
+
 }
 
 
@@ -47,6 +63,6 @@ fun main() {
 //        3->animalList[i].move()
 //        4->{
 //            animalBorn++
-//            animalList.add(animalList[i].procreate())
+//            animalList.add(animalList[i].bornAnimal())
 //        }
 //    }
