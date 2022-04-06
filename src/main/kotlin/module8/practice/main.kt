@@ -1,7 +1,5 @@
 package module8.practice
 
-import kotlin.random.Random
-
 fun main() {
 
     val fish = Fish(20, 20, 1, name = "FISH", maxAge = 30)
