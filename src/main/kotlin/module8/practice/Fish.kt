@@ -19,7 +19,7 @@ open class Fish(
         println("Плывет")
     }
 
-    public override fun bornAnimal(): Fish {
+    override fun bornAnimal(): Fish {
         val animal = super.bornAnimal()
         return Fish(
             energy = animal.energy,

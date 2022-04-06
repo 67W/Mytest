@@ -14,11 +14,12 @@ class Bird(
     name
 ) {
     override fun move() {
+        if (isNotOkStatus()) return
         super.move()
         println("Летит")
     }
 
-    public override fun bornAnimal(): Bird {
+    override fun bornAnimal(): Bird {
         val animal = super.bornAnimal()
         return Bird(
             energy = animal.energy,
