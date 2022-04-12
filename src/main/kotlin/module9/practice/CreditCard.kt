@@ -1,6 +1,6 @@
 package module9.practice
 
-class CreditCard(balance: Int) : BankCard(balance) {
+open class CreditCard(balance: Int) : BankCard(balance) {
     val creditLimit = 10000
     var creditBalance = creditLimit
 

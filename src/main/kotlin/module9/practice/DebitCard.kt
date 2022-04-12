@@ -1,10 +1,10 @@
 package module9.practice
 
-class DebitCard(balance: Int) : BankCard(balance) {
+abstract class DebitCard(balance: Int) : BankCard(balance) {
 
-    override fun deposit(cashIn: Int) {
-        super.deposit(cashIn)
-    }
+//    override open fun deposit(cashIn: Int) {
+//        super.deposit(cashIn)
+//    }
 
     override fun getBalanceInfo(): Int {
         println("Debit card balance: $balance")
