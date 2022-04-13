@@ -1,2 +1,41 @@
 package module9.practice
 
+fun main() {
+    val debitCard1 = DebitCard1(50000)
+    val debitCard2 = DebitCard2(50000)
+    val creditCard1 = CreditCard1(150000)
+
+    debitCard1.pay(1000)
+    debitCard1.getBalanceInfo()
+    debitCard1.printInfo()
+    println()
+    debitCard1.pay(1000)
+    debitCard1.getBalanceInfo()
+    debitCard1.printInfo()
+    println("---------------")
+
+    debitCard2.pay(1000)
+    debitCard2.getBalanceInfo()
+    debitCard2.printInfo()
+    println()
+    debitCard2.pay(7000)
+    debitCard2.getBalanceInfo()
+    debitCard2.printInfo()
+    println()
+    debitCard2.pay(6000)
+    debitCard2.getBalanceInfo()
+    debitCard2.printInfo()
+    println("-----------------")
+
+    creditCard1.pay(1000)
+    creditCard1.getBalanceInfo()
+    println()
+    creditCard1.pay(50000)
+    creditCard1.getBalanceInfo()
+    println()
+    creditCard1.pay(90200)
+    creditCard1.getBalanceInfo()
+    println()
+    creditCard1.pay(100001)
+    creditCard1.getBalanceInfo()
+}

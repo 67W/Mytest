@@ -7,25 +7,27 @@ class CreditCard1(balance: Int) : CreditCard(balance = balance) {
     private var sumPay = 0
     private val cashForCashbackLevelUp = 50000
 
+
+    // каждые 50к покупки +1% кэшбэк до 10% кэшбэк
     override fun pay(cashOut: Int): Boolean {
-        sumPay = sumPay + cashOut
-        if (sumPay > cashForCashbackLevelUp && potentialCashback < cashbackMax) {
-            potentialCashback += 0.01
-            sumPay
-        }
-        return super.pay(sumPay.toInt())
+        return if (super.pay(cashOut)) {
+            sumPay += cashOut
+            cashback = cashOut * potentialCashback
+
+            while (sumPay > cashForCashbackLevelUp && potentialCashback < cashbackMax) {
+                potentialCashback += 0.01
+                sumPay -= cashForCashbackLevelUp
+            }
+            deposit(cashback.toInt())
+            true
+        } else false
     }
 
-    private fun result(cashOut: Int): Double {
-        val result = cashOut - cashback
-        cashback = if (result > sumPay) {
-            result * potentialCashback
-        } else {
-            0.0
-        }
-        return result
+    override fun getBalanceInfo(): Int {
+        println("Credit card percentage: $potentialCashback")
+        println("Credit card minimal maximun cashback: $cashbackMax")
+        println("Credit card minimal current pay cashback: $cashback")
+        println("Credit card minimal current sumPay: $sumPay")
+        return super.getBalanceInfo()
     }
 }
-
-
-// каждые 50к покупки +1% кэшбэк до 10% кэшбэк

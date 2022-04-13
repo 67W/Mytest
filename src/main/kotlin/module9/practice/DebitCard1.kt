@@ -15,4 +15,11 @@ class DebitCard1(balance: Int) : DebitCard(balance = balance) {
         }
         return super.pay(sumPay.toInt())
     }
+
+    override fun getBalanceInfo(): Int {
+        println("Debit card percentage: $percentage")
+        return super.getBalanceInfo()
+    }
+
+    fun printInfo() = println("Count bonus: $countBonus")
 }

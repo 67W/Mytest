@@ -1,8 +1,8 @@
 package module9.practice
 
 open class CreditCard(balance: Int) : BankCard(balance) {
-    val creditLimit = 10000
-    var creditBalance = creditLimit
+    private val creditLimit = 100000
+    private var creditBalance = creditLimit
 
     override fun deposit(cashIn: Int) {
         creditBalance += cashIn
@@ -21,7 +21,10 @@ open class CreditCard(balance: Int) : BankCard(balance) {
                 balance -= cashOut
             }
             true
-        } else false
+        } else {
+            println("No money")
+            false
+        }
     }
 
     override fun getBalanceInfo(): Int {
