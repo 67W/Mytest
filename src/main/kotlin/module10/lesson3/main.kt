@@ -17,3 +17,23 @@ fun main() {
     anonymous.lastName
     anonymous.method()
 }
+
+class AnonymousTest {
+    private val anonymous = object :Callable{
+        val name = "anonymous"
+        val lastName = "object"
+        fun method() = println("anonymous object")
+        override val vendor = "anonymous object"
+
+        override fun call(number: String) {
+            println("anonymous object calling")
+        }
+    }
+    fun testMethod(){
+        anonymous.name
+        anonymous.lastName
+        anonymous.method()
+        anonymous.vendor
+        anonymous.call("")
+    }
+}
