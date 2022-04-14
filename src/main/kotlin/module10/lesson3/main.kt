@@ -3,11 +3,7 @@ package module10.lesson3
 import module10.lesson1.Callable
 
 fun main() {
-    val evenChecker = object : IntPredicate {
-        override fun accept(i: Int): Boolean {
-            return i % 2 == 0
-        }
-    }
+    val evenChecker = IntPredicate { i -> i % 2 == 0 }
     println("8 is even - ${evenChecker.accept(8)}")
     println("9 is even - ${evenChecker.accept(9)}")
 }
