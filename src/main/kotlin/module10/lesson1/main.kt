@@ -7,4 +7,7 @@ fun main() {
     val mobilePhone = MobilePhone()
     mobilePhone.call("98745645656")
     mobilePhone.playVideo("www.example.com")
+
+    val webBrowser = listOf(MobilePhone(), SmartTV())
+    webBrowser.forEach { it.playVideo("www.example.com") }
 }
