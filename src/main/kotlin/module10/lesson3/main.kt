@@ -22,7 +22,7 @@ fun main() {
 }
 
 class AnonymousTest {
-    private val anonymous = object : Callable {
+    fun createAnonymousObject() = object : Callable {
         val name = "anonymous"
         val lastName = "object"
         fun method() = println("anonymous object")
@@ -34,6 +34,8 @@ class AnonymousTest {
     }
 
     fun testMethod(obj: Callable) {
+        val obj = createAnonymousObject()
         obj.vendor
+        obj.call("")
     }
 }
