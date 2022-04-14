@@ -1,6 +1,7 @@
 package module10.lesson1
 
-class SmartFridge:Callable {
+class SmartFridge : Callable {
+    override val vendor = "LG"
     override fun call(number: String) {
         println("Hey, my smart fridge calling $number")
     }

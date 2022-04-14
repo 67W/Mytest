@@ -1,6 +1,7 @@
 package module10.lesson1
 
-class MobilePhone: Callable, WebBrowser {
+class MobilePhone : Callable, WebBrowser {
+    override val vendor = "Samsung"
     override fun call(number: String) {
         println("Mobile phone calling $number")
     }
