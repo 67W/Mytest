@@ -21,6 +21,10 @@ fun main() {
     test.testMethod(anonymous)
 }
 
+fun interface IntPredicate {
+    fun accept(i: Int): Boolean
+}
+
 class AnonymousTest {
     private fun createAnonymousObject() = object : Callable {
         val name = "anonymous"
