@@ -3,22 +3,13 @@ package module10.lesson3
 import module10.lesson1.Callable
 
 fun main() {
-    val anonymous = object : Callable {
-        val name = "anonymous"
-        val lastName = "object"
-        fun method() = println("anonymous object")
-        override val vendor = "anonymous object"
-
-        override fun call(number: String) {
-            println("anonymous object calling")
+    val evenChecker = object : IntPredicate {
+        override fun accept(i: Int): Boolean {
+            return i % 2 == 0
         }
     }
-    anonymous.name
-    anonymous.lastName
-    anonymous.method()
-
-    val test = AnonymousTest()
-    test.testMethod(anonymous)
+    println("8 is even - ${evenChecker.accept(8)}")
+    println("9 is even - ${evenChecker.accept(9)}")
 }
 
 fun interface IntPredicate {
