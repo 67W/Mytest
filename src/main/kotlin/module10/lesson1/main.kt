@@ -4,10 +4,6 @@ fun main() {
     val devices = listOf(MobilePhone(), AppleWatch(), DiskPhone(), SmartFridge())
     devices.forEach { it.call("89219999999") }
 
-    val mobilePhone = MobilePhone()
-    mobilePhone.call("98745645656")
-    mobilePhone.playVideo("www.example.com")
-
-    val webBrowser = listOf(MobilePhone(), SmartTV())
+    val webBrowser = listOf<WebBrowser>(SmartTV(), MobilePhone())
     webBrowser.forEach { it.playVideo("www.example.com") }
 }
