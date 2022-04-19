@@ -8,9 +8,8 @@ class Person(
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
-        if (javaClass != other?.javaClass) return false
+        if (other !is Person) return false
 
-        other as Person
 
         if (passportSeries != other.passportSeries) return false
         if (passportNumber != other.passportNumber) return false
