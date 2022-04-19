@@ -23,7 +23,7 @@ class Person(
         return result
     }
 
-    override fun toString(): String {
-        return "Person(name='$name', lastName='$lastName', passportSeries=$passportSeries, passportNumber=$passportNumber)"
-    }
+//    override fun toString(): String {
+//        return "Person(name='$name', lastName='$lastName', passportSeries=$passportSeries, passportNumber=$passportNumber)"
+//    }
 }
