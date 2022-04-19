@@ -22,4 +22,8 @@ class Person(
         result = 31 * result + passportNumber
         return result
     }
+
+    override fun toString(): String {
+        return "Person(name='$name', lastName='$lastName', passportSeries=$passportSeries, passportNumber=$passportNumber)"
+    }
 }
