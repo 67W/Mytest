@@ -1,6 +1,5 @@
 package module11.lesson1
 
-
 fun main() {
     println(
         Person(
