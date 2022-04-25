@@ -6,6 +6,7 @@ fun main() {
     val train = Train(10000)
     println("capacity - ${train.capacity}")
     train.move()
+    println("-----------")
 
     val boeing737 = Boeing737()
     val passengerCount = Random.nextInt(1, boeing737.capacity)

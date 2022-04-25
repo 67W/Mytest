@@ -30,14 +30,13 @@ abstract class Aircraft(maxWeight: Int) : Transporter(maxWeight) {
     }
 
     abstract fun getSeatScheme()
-    fun getInfo() {
-        """Aircraft: $brand $model
+    fun getInfo() = """Aircraft: $brand $model
             |Max weight: $maxWeight
             |Capacity: $capacity
             |Number of rows: $rows
             |Number of seats in a row: $numberOfSeatsInARow
         """.trimMargin()
-    }
+
 
     override fun move() {
         println("Aircraft flying")
