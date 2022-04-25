@@ -1,4 +1,8 @@
 package module9.lesson2
 
-class Transporter {
+abstract class Transporter(
+    val maxWeight: Int
+) {
+    abstract val capacity: Int
+    abstract fun move()
 }
