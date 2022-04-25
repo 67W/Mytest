@@ -57,7 +57,7 @@ fun createAndFillZeppelin(): Zeppelin {
         val seat = zeppelin.getAvailableSeat() ?: return zeppelin
 
         val passenger = Passenger(
-            name = "Ivan",
+            name = "Alex",
             lastName = "Ivanov",
             document = DeputyID(
                 number = Random.nextInt(100000, 999999).toString()

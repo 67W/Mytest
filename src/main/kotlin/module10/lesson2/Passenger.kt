@@ -6,7 +6,7 @@ class Passenger(
     val document: Document,
     val seat: Seat
 ) {
-    fun getInfo() = """$name with document: 
+    fun getInfo() = """$name $lastName with document: 
     |${document.getTypeDocument()} - ${document.getStringIdentifier()}
 """.trimMargin()
 }
