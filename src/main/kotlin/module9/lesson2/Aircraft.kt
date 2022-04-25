@@ -6,6 +6,15 @@ abstract class Aircraft(maxWeight: Int) : Transporter(maxWeight) {
     abstract val engineCount: Int
     abstract val altitude: Int
 
+    abstract val rows: Int
+    abstract val numberOnSeatInRow: Int
+
+    protected val seatScheme = List(rows) {
+        MutableList<Passenger?>(numberOnSeatInRow) {
+            null
+        }
+    }
+
 
     fun addPassenger(passenger: Passenger) {
 
