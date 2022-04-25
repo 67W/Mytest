@@ -7,24 +7,35 @@ abstract class Aircraft(maxWeight: Int) : Transporter(maxWeight) {
     abstract val altitude: Int
 
     abstract val rows: Int
-    abstract val numberOnSeatInRow: Int
+    abstract val numberOfSeatsInARow: Int
 
     protected val seatScheme by lazy {
         List(rows) {
-            MutableList<Passenger?>(numberOnSeatInRow) {
+            MutableList<Passenger?>(numberOfSeatsInARow) {
                 null
             }
         }
     }
 
     fun addPassenger(passenger: Passenger) {
-
+        val row = passenger.seat.row
+        val number = passenger.seat.letter - 'A'
+        seatScheme[row][number] = passenger
     }
 
     fun getPassenger(seat: Seat): Passenger? {
-        return null
+        val row = seat.row
+        val number = seat.letter - 'A'
+        return seatScheme[row][number]
     }
 
-    fun getSeatScheme() {}
-    fun getInfo() {}
+    abstract fun getSeatScheme()
+    fun getInfo() {
+        """Aircraft: $brand $model
+            |Max weight: $maxWeight
+            |Capacity: $capacity
+            |Number of rows: $rows
+            |Number of seats in a row: $numberOfSeatsInARow
+        """.trimMargin()
+    }
 }
