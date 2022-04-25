@@ -10,9 +10,13 @@ fun main() {
     println()
 
     val boeing737 = createAndFillBoeing()
-
     println(boeing737.getInfo())
     boeing737.getSeatScheme()
+    boeing737.getPassenger(Seat(0, 'c'))
+        ?.getInfo()
+        ?.let { println(it) }
+        ?: println("there is no passenger")
+
     println()
     println("-----------------------")
     println()
@@ -20,6 +24,10 @@ fun main() {
     val zeppelin = createAndFillZeppelin()
     println(zeppelin.getInfo())
     zeppelin.getSeatScheme()
+    zeppelin.getPassenger(Seat(0, 'c'))
+        ?.getInfo()
+        ?.let { println(it) }
+        ?: println("there is no passenger")
 }
 
 fun createAndFillBoeing(): Boeing737 {
