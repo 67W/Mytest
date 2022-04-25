@@ -1,6 +1,6 @@
 package module9.lesson2
 
-class Train(maxWeight:Int): Transporter(maxWeight) {
+class Train(maxWeight: Int) : Transporter(maxWeight) {
     override val capacity: Int = 0
 
 
