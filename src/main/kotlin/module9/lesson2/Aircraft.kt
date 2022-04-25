@@ -6,8 +6,15 @@ abstract class Aircraft(maxWeight: Int) : Transporter(maxWeight) {
     abstract val engineCount: Int
     abstract val altitude: Int
 
-    fun addPassenger() {}
-    fun getPassenger() {}
+
+    fun addPassenger(passenger: Passenger) {
+
+    }
+
+    fun getPassenger(seat: Seat): Passenger? {
+        return null
+    }
+
     fun getSeatScheme() {}
     fun getInfo() {}
 }
