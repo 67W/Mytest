@@ -9,12 +9,13 @@ abstract class Aircraft(maxWeight: Int) : Transporter(maxWeight) {
     abstract val rows: Int
     abstract val numberOnSeatInRow: Int
 
-    protected val seatScheme = List(rows) {
-        MutableList<Passenger?>(numberOnSeatInRow) {
-            null
+    protected val seatScheme by lazy {
+        List(rows) {
+            MutableList<Passenger?>(numberOnSeatInRow) {
+                null
+            }
         }
     }
-
 
     fun addPassenger(passenger: Passenger) {
 
