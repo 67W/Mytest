@@ -31,7 +31,10 @@ fun createAndFillBoeing(): Boeing737 {
         val passenger = Passenger(
             name = "Ivan",
             lastName = "Petrov",
-            passport = "${Random.nextInt(1000, 9999)} ${Random.nextInt(100000, 999999)}",
+            document = ForeignPassport(
+                series = Random.nextInt(1000, 9999).toString(),
+                number = Random.nextInt(100000, 999999).toString()
+            ),
             seat = seat
         )
         boeing737.addPassenger(passenger)
@@ -48,7 +51,9 @@ fun createAndFillZeppelin(): Zeppelin {
         val passenger = Passenger(
             name = "Ivan",
             lastName = "Ivanov",
-            passport = "${Random.nextInt(1000, 9999)} ${Random.nextInt(100000, 999999)}",
+            document = DeputyID(
+                number = Random.nextInt(100000, 999999).toString()
+            ),
             seat = seat
         )
         zeppelin.addPassenger(passenger)
