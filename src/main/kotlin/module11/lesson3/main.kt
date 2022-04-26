@@ -14,3 +14,13 @@ fun switchColor(color: Color): Color =
         Color.GREEN -> Color.BLUE
         Color.BLUE -> Color.BLACK
     }
+
+fun switchColor(color: SealedColor): SealedColor =
+    when (color) {
+        SealedColor.White -> SealedColor.Black
+        SealedColor.Black -> SealedColor.Red
+        SealedColor.Red -> SealedColor.Green
+        SealedColor.Green -> SealedColor.Blue
+        SealedColor.Blue -> SealedColor.Black
+        is SealedColor.CustomColor -> SealedColor.CustomColor("#345")
+    }

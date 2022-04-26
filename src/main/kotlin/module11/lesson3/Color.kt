@@ -9,7 +9,6 @@ enum class Color(val hex: String) : Drawble {
         }
     },
     GREEN("#0F0"),
-    GREY("#888"),
     BLUE("#00F");
 
     fun someMethod() {
