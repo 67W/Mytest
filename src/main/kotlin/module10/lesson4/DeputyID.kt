@@ -5,7 +5,7 @@ class DeputyID(
     private val issueDate: String
 
 ) : Document {
-    override fun getStringIdentifier(): String = number
+    override fun getStringIdentifier(): String = "$number, issue date: $issueDate"
 
     override fun getTypeDocument(): String = "Deputy ID"
 }
