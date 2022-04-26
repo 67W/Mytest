@@ -4,9 +4,9 @@ import module8.lesson3.Developer
 import module8.lesson3.Person
 
 fun main() {
-    val developer = Developer("Tony", 40)
-    developer.writeCode()
-    developer.getLevel()
+    val person: Person = Developer("Tony", 40)
+    val developer: Developer? = person as? Developer
 
-    val person: Person = developer
+    developer?.writeCode()
+    println(developer?.getLevel())
 }
