@@ -1,7 +1,11 @@
 package module11.lesson5
 
-fun main() {
+import kotlin.random.Random
 
+fun main() {
+    val number = Random.nextInt(1, 10)
+    println(number)
+    printNumber(number)
 }
 
 fun Int.isEven(): Boolean {
@@ -11,4 +15,15 @@ fun Int.isEven(): Boolean {
 fun printNumber(number: Int) {
     println(number.isEven())
     println(5.isEven())
+
+    val a = Int.random()
+    val b = Int.random()
+
 }
+
+fun Int.Companion.random(): Int {
+    return (System.currentTimeMillis() % 43).toInt()
+}
+
+val Int.isEven
+    get() = this % 2 == 0
