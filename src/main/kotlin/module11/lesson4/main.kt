@@ -1,19 +1,17 @@
 package module11.lesson4
 
-import module11.lesson3.Person
-import module7.lesson1.Car
-import module8.lesson3.Developer
-
 fun main() {
-
-    val object1 = Generic(5)
-    val object2 = Generic("Generic String")
-    val object3 = Generic(Car())
-
-    val person = Generic<Person>(Person("Tony", "Noname"))
-    person.setItem(Developer("Developer", 25))
+    val first = Generic<Number>(5.0)
+    val second = Generic<Number>(10)
+    sum(first, second)
 }
 
 fun <T> genericFun(input: T): String {
     return input?.toString() ?: "object is null"
+}
+
+fun sum(a: Generic<Number>, b: Generic<Number>): Int? {
+    val first = a.item?.toInt() ?: return null
+    val second = b.item?.toInt() ?: return null
+    return first + second
 }
