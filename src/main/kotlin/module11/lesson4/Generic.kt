@@ -6,4 +6,6 @@ class Generic<out T : Number>(value: T) {
     private var item: T? = value
         private set
     val initializeDate = Date()
+
+    fun getItem() = item
 }

@@ -11,7 +11,7 @@ fun <T> genericFun(input: T): String {
 }
 
 fun sum(a: Generic<Number>, b: Generic<Number>): Int? {
-    val first = a.item?.toInt() ?: return null
-    val second = b.item?.toInt() ?: return null
+    val first = a.getItem()?.toInt() ?: return null
+    val second = b.getItem()?.toInt() ?: return null
     return first + second
 }
