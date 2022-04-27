@@ -11,14 +11,9 @@ fun main() {
     println(genericFun(Car()))
     println(genericFun(null))
 
-    val object1 = Generic<Int>()
-    object1.item = 5
-
-    val object2 = Generic<String>()
-    object2.item = "Generic String"
-
-    val object3 = Generic<Car>()
-    object3.item = Car()
+    val object1 = Generic(5)
+    val object2 = Generic("Generic String")
+    val object3 = Generic(Car())
 
 }
 
