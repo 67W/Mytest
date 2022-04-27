@@ -1,8 +1,8 @@
 package module11.lesson4
 
 fun main() {
-    val first = Generic<Number>(5.0)
-    val second = Generic<Number>(10)
+    val first = Generic<Double>(5.0)
+    val second = Generic<Int>(10)
     sum(first, second)
 }
 
