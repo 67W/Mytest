@@ -9,7 +9,7 @@ fun main() {
     sum(first, second)
 
     val developer = Developer("Tony", 40)
-//    printDeveloper(Printer<Person>(), developer)
+    printDeveloper(Printer<Person>(), developer)
 }
 
 fun <T> genericFun(input: T): String {
@@ -22,7 +22,7 @@ fun sum(a: Generic<Number>, b: Generic<Number>): Int? {
     return first + second
 }
 
-//fun printDeveloper(printer: Printer<Developer>, developer: Developer){
-////some logic
-//    printer.print(developer)
-//}
+fun printDeveloper(printer: Printer<Developer>, developer: Developer){
+//some logic
+    printer.print(developer)
+}
