@@ -8,17 +8,18 @@ fun main() {
     printNumber(number)
 }
 
-fun Int.isEven(): Boolean {
-    return this % 2 == 0
-}
+//fun Int.isEven(): Boolean {
+//    return this % 2 == 0
+//}
 
 fun printNumber(number: Int) {
-    println(number.isEven())
-    println(5.isEven())
+//    println(number.isEven())
+//    println(5.isEven())
 
     val a = Int.random()
     val b = Int.random()
-
+    println(number.isEven)
+    println(5.isEven)
 }
 
 fun Int.Companion.random(): Int {
