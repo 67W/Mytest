@@ -2,9 +2,11 @@ package module11.practice
 
 import kotlin.random.Random
 
-abstract class AbstractWeapon {
-    val maxAmmoCount = 30
-    var fireType = FireType.Oneshot
+abstract class AbstractWeapon(
+    val maxAmmoCount: Int,
+    val fireType: FireType
+) {
+
     var ammoMagazine = GenericStack<Ammo>()
     val isEmptyMagazine = ammoMagazine.isEmpty()
 
