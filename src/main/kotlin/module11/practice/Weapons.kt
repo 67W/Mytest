@@ -10,5 +10,3 @@ object Weapons {
 
     fun createHeavygun() = object : AbstractWeapon(100, FireType.BurstFire(30)) {}
 }
-
-
