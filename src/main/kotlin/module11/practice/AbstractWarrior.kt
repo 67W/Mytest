@@ -11,6 +11,8 @@ abstract class AbstractWarrior(
     private var currentHP = maxHP
     override val avoidChance = Random.nextInt(0, 101)
 
+    override var isKilled = false
+
     override fun attack(enemy: Warrior) {
         if (isKilled) return
 
