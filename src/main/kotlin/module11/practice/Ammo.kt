@@ -8,9 +8,9 @@ enum class Ammo(
     val criticalDamageChance: Int,
     val criticalDamageRatio: Int
 ) {
-    AMMO10(10, 30, 50),
-    AMMO12(12, 20, 70),
-    AMMO16(16, 10, 160);
+    AMMO10(100, 30, 50),
+    AMMO12(120, 20, 70),
+    AMMO16(160, 10, 160);
 
     fun damage(): Int {
         return if (criticalDamageChance.randomCriticalDamageChance()) {

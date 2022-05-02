@@ -3,9 +3,9 @@ package module11.practice
 import kotlin.random.Random
 
 class Team {
-    fun createTeam(): List<AbstractWarrior> {
+    fun createTeam(): MutableList<AbstractWarrior> {
         val team = mutableListOf<AbstractWarrior>()
-        repeat(10) {
+        repeat(1) {
             val random = Random.nextInt(0, 101)
             val random2 = Random.nextInt(0, 101)
             when {

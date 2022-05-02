@@ -7,8 +7,9 @@ abstract class AbstractWeapon(
     val fireType: FireType
 ) {
 
-    var ammoMagazine = GenericStack<Ammo>()
-    val isEmptyMagazine = ammoMagazine.isEmpty()
+    private val ammoMagazine = GenericStack<Ammo>()
+   var isEmptyMagazine: Boolean = false
+   get() = ammoMagazine.isEmpty()
 
     fun createAmmoType(ammo: Int): Ammo {
         return when (ammo) {
@@ -25,6 +26,9 @@ abstract class AbstractWeapon(
     }
 
     fun getAmmo(): Ammo? {
-        return ammoMagazine.pop()
+        val pop = ammoMagazine.pop()
+        println(pop)
+        println(ammoMagazine.toString())
+        return pop
     }
 }

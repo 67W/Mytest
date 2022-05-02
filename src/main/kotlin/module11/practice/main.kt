@@ -4,8 +4,26 @@ import kotlin.random.Random
 
 
 fun main() {
-    val v10 = Ammo.AMMO10
-    println(v10.damage())
+val battle= Battle()
+    println( battle.getBattleInfo().toString())
+
+    battle.battle()
+    battle.battle()
+    battle.battle()
+    battle.battle()
+    battle.battle()
+    battle.battle()
+    battle.battle()
+    battle.battle()
+    battle.battle()
+    battle.battle()
+    battle.battle()
+    battle.battle()
+    battle.battle()
+    battle.battle()
+    println( battle.getBattleInfo().toString())
+    battle.battle()
+    println( battle.getBattleInfo().toString())
 }
 
 
