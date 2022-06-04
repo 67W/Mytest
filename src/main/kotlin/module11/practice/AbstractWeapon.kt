@@ -20,8 +20,9 @@ abstract class AbstractWeapon(
     }
 
     fun reloadMagazine() {
+        val getRandom = Random.nextInt(1,4)
         repeat(maxAmmoCount) {
-            ammoMagazine.push(createAmmoType(Random.nextInt(1, 4)))
+            ammoMagazine.push(createAmmoType(getRandom))
         }
     }
 

@@ -5,7 +5,7 @@ import kotlin.random.Random
 class Team {
     fun createTeam(): MutableList<AbstractWarrior> {
         val team = mutableListOf<AbstractWarrior>()
-        repeat(1) {
+        repeat(2) {
             val random = Random.nextInt(0, 101)
             val random2 = Random.nextInt(0, 101)
             when {
